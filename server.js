@@ -26,6 +26,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Default route to display server status
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
 // Routes Middlewares
 app.use("/api/home", homeRouter);
 app.use("/api/users", userRouter);
